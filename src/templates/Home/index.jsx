@@ -1,15 +1,15 @@
-import './App.css';
+import './styles.css';
 import React from 'react';
-import PostCard from './components/PostCard';
-import { loadPosts } from './utils/load-posts';
+import PostCard from '../../components/PostCard';
+import { loadPosts } from '../../utils/load-posts';
 
-class App extends React.Component {
+class Home extends React.Component {
   state = {
     posts: []
   }
 
-  componentDidMount() {
-    this.loadPosts();
+  async componentDidMount() {
+    await this.loadPosts();
   }
 
   loadPosts = async () => {
@@ -37,4 +37,4 @@ class App extends React.Component {
 }
 
 
-export default App;
+export default Home;
