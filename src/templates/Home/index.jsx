@@ -1,7 +1,7 @@
 import './styles.css';
 import React from 'react';
-import PostCard from '../../components/PostCard';
 import { loadPosts } from '../../utils/load-posts';
+import Posts from '../../components/Posts';
 
 class Home extends React.Component {
   state = {
@@ -19,18 +19,10 @@ class Home extends React.Component {
 
   render() {
     const { posts } = this.state;
-    
+
     return (
       <section className="container">
-        <div className="posts">
-          {posts.map(({ cover, title, id, body }) => (
-            <PostCard
-              title={ title }
-              cover={ cover }
-              id={ id }
-              body={ body } />
-          ))}
-        </div>
+        <Posts posts={ posts } />
       </section>
     );
   }
