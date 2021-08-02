@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import PostCard from '../PostCard';
 import './styles.css';
 
-function Posts({ posts }) {
+function Posts({ posts = [] }) {
   return (
     <div className="posts">
       {posts.map(({
@@ -21,8 +21,17 @@ function Posts({ posts }) {
   );
 }
 
+Posts.defaultProps = {
+  posts: [],
+};
+
 Posts.propTypes = {
-  posts: PropTypes.string.isRequired,
+  posts: PropTypes.arrayOf(PropTypes.shape({
+    cover: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    body: PropTypes.string.isRequired,
+  })),
 };
 
 export default Posts;

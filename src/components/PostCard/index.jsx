@@ -19,7 +19,7 @@ function PostCard({
 PostCard.propTypes = {
   cover: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   body: PropTypes.string.isRequired,
 };
 
